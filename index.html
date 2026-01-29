@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AIkart – Smart Product Finder</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#030712">
+    <!-- CACHE CONTROL -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="style.css?v=2026.1">
+</head>
+
+<body>
+    <!-- MESH CANVAS -->
+    <div class="bg-canvas">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+    </div>
+
+    <!-- MAIN APP SHELL -->
+    <div class="app-shell">
+
+        <!-- HEADER -->
+        <header class="main-header">
+            <div class="logo-container">
+                <div class="logo-icon-wrap">
+                    <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+                <div class="logo-text-group">
+                    <h1>AIkart</h1>
+                    <p class="tagline">Smart Product Finder</p>
+                    <p class="gm-badge">GM Product Finder AI</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-hub">
+            <!-- SECTION 1 – UNIFIED SEARCH (PRIMARY SOURCE OF TRUTH) -->
+            <section class="master-search-section">
+                <div class="search-pill-container">
+                    <div class="search-input-group">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="unifiedSearchInput"
+                            placeholder="Search products (e.g. iPhone 15, Shoes, Mixer Grinder)">
+                    </div>
+
+                    <div class="search-controls">
+                        <select id="marketCategorySelect" class="pill-select">
+                            <option value="all">Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="grocery">Grocery / Daily Needs</option>
+                            <option value="home">Home / General</option>
+                        </select>
+                        <button id="marketSearchBtn" class="primary-pill-btn">
+                            Search Best Sites
+                        </button>
+                    </div>
+                </div>
+                <p class="search-hint">One search → Direct store results or AI analysis</p>
+            </section>
+
+            <!-- AI SUMMARY (IN-SITE) -->
+            <div id="aiSummaryArea" class="ai-summary-container"></div>
+
+            <!-- ALKART AI RESEARCH FLOW -->
+            <div id="alkartResearchFlow" class="research-flow-container">
+                <div class="research-steps">
+                    <div class="research-step" id="stepConfirm">
+                        <div class="step-dot"></div>
+                        <span class="step-label">Confirming Product</span>
+                    </div>
+                    <div class="research-step" id="stepCompare">
+                        <div class="step-dot"></div>
+                        <span class="step-label">Comparing Prices</span>
+                    </div>
+                    <div class="research-step" id="stepAnalyze">
+                        <div class="step-dot"></div>
+                        <span class="step-label">Analyzing Reviews</span>
+                    </div>
+                    <div class="research-step" id="stepFinalize">
+                        <div class="step-dot"></div>
+                        <span class="step-label">Finalizing Best Deal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SHOPPING RESULTS (Dynamic) -->
+            <section id="resultsTitleSection" style="display: none; margin: 30px 0;">
+                <h2 class="results-main-title">Alkart AI: Best Deals Found</h2>
+                <div id="resultsArea"></div>
+            </section>
+
+            <!-- SECTION 2 – AI SUGGESTIONS (SECONDARY FEATURE) -->
+            <section class="ai-suggestion-section">
+                <div class="ai-analysis-card glass-morphic">
+                    <div class="ai-header">
+                        <div class="ai-badge">POWERED BY PERPLEXITY</div>
+                        <h3>AI Deep Analysis</h3>
+                    </div>
+                    <p class="ai-card-desc">Get Thinking • Comparison • Pros & Cons • Alternatives</p>
+
+                    <!-- AI ASSISTANT ANIMATION (Acts as Button) -->
+                    <div id="aiSuggestionBtn" class="ai-assistant-container">
+                        <div class="ai-orb">
+                            <div class="orb-inner"></div>
+                            <div class="orb-ring"></div>
+                            <div class="orb-particles"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- REDIRECT ANIMATION OVERLAY -->
+        <div id="aiThinkingLoader" class="ai-thinking-overlay" style="display: none;">
+            <div class="loader-content">
+                <div class="spinning-circle"></div>
+                <div class="thinking-steps">
+                    <div class="step" id="step1">AI Thinking...</div>
+                    <div class="step" id="step2">Structuring Comparison...</div>
+                    <div class="step" id="step3">Redirecting to Perplexity...</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <p>Alkart AI &copy; 2026 – Smart Shopping Engine</p>
+        </footer>
+    </div>
+
+    <script src="script.js?v=2026.1"></script>
+</body>
+
+</html>
